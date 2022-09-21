@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %} {% block title %}Register{% endblock %} {% block
+body %}
+{{ form_start(registrationForm) }}
+<section class="text-gray-600 body-font">
+	<div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+		<div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+			<h1 class="title-font font-medium text-3xl text-gray-900">
+				Bienvenue sur Mon Blog !
+			</h1>
+			<p class="leading-relaxed mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius aut ut similique in harum, a dolore fugiat quasi mollitia eaque amet eos ea sit tempore asperiores atque necessitatibus molestias nam.</p>
+		</div>
+		<div
+			class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0"
+		>
+			<h2 class="text-gray-900 text-lg font-medium title-font mb-5">
+				S'inscrire
+			</h2>
+			<div class="relative mb-4">
+				{{ form_row(registrationForm.firstName, {'attr': {'class': 'w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
+				}}) }}
+			</div>
+			<div class="relative mb-4">
+				{{ form_row(registrationForm.lastName, {'attr': {'class': 'w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
+				}}) }}
+			</div>
+			<div class="relative mb-4">
+				{{ form_row(registrationForm.email, {'attr': {'class': 'w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
+				}}) }}
+			</div>
+			<div class="relative mb-4">
+				{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'}}) }}
+				</div>
+				<div class="form-check">
+					{{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer mb-4'
+				}}) }}
+					{# <input
+						class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+						type="checkbox"
+						value=""
+						id="flexCheckDefault"
+					/>
+					<label
+						class="form-check-label inline-block text-gray-800"
+						for="flexCheckDefault"
+					>
+						Acceptez les conditions
+					</label> #}
+				</div>
+				<button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">S'inscrire</button>
+				<p class="text-xs text-gray-500 mt-3">
+				En vous inscrivant, vous acceptez les
+				<a href="#">Conditions d'utilisation</a> et la
+				<a href="#">Politique de confidentialité</a>, notamment l'<a href="#"
+					>Utilisation des cookies</a
+				>..
+			</p>
+			<p class="text-sm font-semibold mt-2 pt-1 mb-0">
+				Vous avez déja un compte?
+				<a
+					href="{{ path('app_login') }}"
+					class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+				>
+					SE CONNECTER</a
+				>
+			</p>
+			</div>
+			{# <button
+				class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+			>
+				S'inscrire
+			</button> #}
+			
+		</div>
+	</div>
+</section>
+{{ form_end(registrationForm) }}
+
+{# {{ form_start(registrationForm) }}
+{{ form_row(registrationForm.firstName) }}
+{{ form_row(registrationForm.lastName) }}
+{{ form_row(registrationForm.email) }}
+{{
+	form_row(registrationForm.plainPassword, { label: 'Password'})
+}}
+{{ form_row(registrationForm.agreeTerms) }}
+
+<button type="submit" class="btn">S'inscrire</button>
+{{ form_end(registrationForm) }} #} {% endblock %}
